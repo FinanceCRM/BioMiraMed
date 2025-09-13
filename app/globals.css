@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-primary-500 border-2 border-primary-500 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .floating-animation {
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  .pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* Ken Burns Effect for Hero Images */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(1deg);
+  }
+}
+
+.ken-burns {
+  animation: kenBurns 7s ease-in-out infinite alternate;
+}
+
+/* Smooth slide transitions */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.slide-out-left {
+  animation: slideOutToLeft 0.8s ease-out;
+}
+
+/* Enhanced glow effects */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.3);
+}
+
+.glow-accent:hover {
+  box-shadow: 0 0 30px rgba(20, 184, 166, 0.5);
+}
+
+/* Parallax scroll effect */
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth reveal animations */
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.reveal-up {
+  animation: revealUp 0.8s ease-out;
+}
+
+/* Breathing animation for important elements */
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
