@@ -7,9 +7,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Heart,
-  Shield,
-  Zap,
-  Users,
 } from "lucide-react";
 
 const Hero = () => {
@@ -58,7 +55,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleSlideChange((prev) => (prev + 1) % slides.length);
-    }, 7000);
+    }, 8000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -72,8 +69,8 @@ const Hero = () => {
       } else {
         setCurrentSlide(newSlide);
       }
-      setIsTransitioning(false);
-    }, 150);
+      setTimeout(() => setIsTransitioning(false), 100);
+    }, 300);
   };
 
   const nextSlide = () => {
@@ -99,12 +96,12 @@ const Hero = () => {
             className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
               index === currentSlide
                 ? "opacity-100 scale-100"
-                : "opacity-0 scale-105"
+                : "opacity-0 scale-110"
             }`}
           >
-            {/* Background Image with Ken Burns Effect */}
+            {/* Background Image with Parallax Effect */}
             <div
-              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[7000ms] ease-linear ${
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[8000ms] ease-linear ${
                 index === currentSlide ? "scale-110" : "scale-100"
               }`}
               style={{ backgroundImage: `url(${slide.image})` }}
@@ -118,18 +115,18 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center">
+      <div className="relative z-10 min-h-screen flex items-center pb-32">
         <div className="container-max px-4">
           <div className="max-w-5xl">
             <div
-              className={`transition-all duration-500 ${
+              className={`transition-all duration-700 ease-out ${
                 isTransitioning
-                  ? "opacity-0 translate-y-8"
-                  : "opacity-100 translate-y-0"
+                  ? "opacity-0 translate-y-8 scale-95"
+                  : "opacity-100 translate-y-0 scale-100"
               }`}
             >
               {/* Badge */}
-              <div className="inline-flex items-center bg-white/15 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-white/20">
+              <div className="inline-flex items-center bg-white/15 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-white/20 shadow-lg">
                 <Heart className="h-6 w-6 text-accent-400 mr-3" />
                 <span className="text-white font-semibold text-lg">
                   Sağlık Teknolojileri Lideri
@@ -156,7 +153,7 @@ const Hero = () => {
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </a>
 
-                <button className="group bg-white/15 backdrop-blur-md hover:bg-white/25 text-white border-2 border-white/30 hover:border-white/50 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center">
+                <button className="group hero-btn bg-white/15 backdrop-blur-md hover:bg-white/25 text-white border-2 border-white/30 hover:border-white/50 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center">
                   <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                   Tanıtım Videosu
                 </button>
@@ -169,27 +166,27 @@ const Hero = () => {
       {/* Enhanced Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/15 backdrop-blur-md hover:bg-white/25 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 hover:border-white/40"
+        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/15 backdrop-blur-md hover:bg-white/25 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 hover:border-white/40 shadow-lg"
       >
         <ChevronLeft className="h-7 w-7" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/15 backdrop-blur-md hover:bg-white/25 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 hover:border-white/40"
+        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/15 backdrop-blur-md hover:bg-white/25 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 hover:border-white/40 shadow-lg"
       >
         <ChevronRight className="h-7 w-7" />
       </button>
 
       {/* Enhanced Slide Indicators */}
-      <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4">
+      <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => handleSlideChange(index)}
             className={`relative overflow-hidden rounded-full transition-all duration-500 ${
               index === currentSlide
-                ? "bg-accent-500 w-12 h-4"
+                ? "bg-accent-500 w-12 h-4 shadow-lg shadow-accent-500/30"
                 : "bg-white/40 hover:bg-white/60 w-4 h-4"
             }`}
           >
@@ -198,58 +195,6 @@ const Hero = () => {
             )}
           </button>
         ))}
-      </div>
-
-      {/* Enhanced Stats Bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-white/10 backdrop-blur-xl border-t border-white/20">
-        <div className="container-max px-4 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center justify-center w-16 h-16 bg-accent-500/20 backdrop-blur-sm rounded-2xl mb-4 mx-auto group-hover:bg-accent-500/30 transition-colors duration-300">
-                <Heart className="h-8 w-8 text-accent-400" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">
-                15+
-              </div>
-              <div className="text-gray-300 font-medium">
-                Yıl Deneyim
-              </div>
-            </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center justify-center w-16 h-16 bg-accent-500/20 backdrop-blur-sm rounded-2xl mb-4 mx-auto group-hover:bg-accent-500/30 transition-colors duration-300">
-                <Users className="h-8 w-8 text-accent-400" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">
-                500+
-              </div>
-              <div className="text-gray-300 font-medium">
-                Mutlu Hasta
-              </div>
-            </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center justify-center w-16 h-16 bg-accent-500/20 backdrop-blur-sm rounded-2xl mb-4 mx-auto group-hover:bg-accent-500/30 transition-colors duration-300">
-                <Shield className="h-8 w-8 text-accent-400" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">
-                50+
-              </div>
-              <div className="text-gray-300 font-medium">
-                Ürün Çeşidi
-              </div>
-            </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center justify-center w-16 h-16 bg-accent-500/20 backdrop-blur-sm rounded-2xl mb-4 mx-auto group-hover:bg-accent-500/30 transition-colors duration-300">
-                <Zap className="h-8 w-8 text-accent-400" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">
-                24/7
-              </div>
-              <div className="text-gray-300 font-medium">
-                Acil Destek
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
