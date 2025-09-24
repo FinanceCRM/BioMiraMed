@@ -107,7 +107,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="section-padding bg-gradient-to-br from-gray-50 via-white to-gray-50"
+      className="section-padding bg-gradient-to-br from-gray-50/30 via-white/50 to-gray-50/30"
     >
       <div className="container-max">
         {/* Header */}

@@ -346,3 +346,291 @@
     transform: translateY(0) scale(1);
   }
 }
+/* Modern Dropdown Menu Animations */
+.dropdown-enter {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+}
+
+.dropdown-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.dropdown-exit-active {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dropdown item hover effects */
+.dropdown-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(14, 124, 123, 0.1),
+    transparent
+  );
+  transition: left 300ms ease-out;
+}
+
+.dropdown-item:hover::before {
+  left: 100%;
+}
+
+/* Enhanced mobile menu animations */
+.mobile-menu-item {
+  animation: mobileSlideIn 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.mobile-menu-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-menu-item:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.mobile-menu-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.mobile-menu-item:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.mobile-menu-item:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+@keyframes mobileSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Header backdrop blur enhancement */
+.header-blur {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Smooth logo animation */
+.logo-container {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation link underline effect */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #14b8a6, #0d9488);
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown shadow enhancement */
+.dropdown-shadow {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Icon bounce animation */
+.icon-bounce {
+  animation: iconBounce 2s infinite;
+}
+
+@keyframes iconBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+/* Enhanced Modern Dropdown Styles */
+.dropdown-shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown item enhanced animations */
+.dropdown-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(14, 124, 123, 0.08),
+    transparent
+  );
+  transition: left 400ms ease-out;
+}
+
+.dropdown-item:hover::before {
+  left: 100%;
+}
+
+/* Gradient icon backgrounds */
+.gradient-icon-bg {
+  background: linear-gradient(135deg, var(--tw-gradient-stops));
+  position: relative;
+}
+
+.gradient-icon-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Enhanced button hover effects */
+.btn-enhanced {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 600ms;
+}
+
+.btn-enhanced:hover::before {
+  left: 100%;
+}
+
+/* Top bar enhancements */
+.top-bar-item {
+  position: relative;
+  transition: all 200ms ease-out;
+}
+
+.top-bar-item::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #14b8a6;
+  transition: width 200ms ease-out;
+}
+
+.top-bar-item:hover::after {
+  width: 100%;
+}
+
+/* Logo pulse effect */
+.logo-pulse {
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(14, 124, 123, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(14, 124, 123, 0);
+  }
+}
+
+/* Navigation link enhanced effects */
+.nav-link-enhanced {
+  position: relative;
+}
+
+.nav-link-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(
+    circle,
+    rgba(14, 124, 123, 0.1) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+}
+
+.nav-link-enhanced:hover::before {
+  width: 100px;
+  height: 100px;
+}

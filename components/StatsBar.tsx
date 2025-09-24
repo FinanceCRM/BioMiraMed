@@ -35,7 +35,7 @@ const StatsBar = () => {
   ];
 
   return (
-    <section className="py-16 bg-white border-t border-gray-100 stats-entrance">
+    <section className="py-16 bg-gradient-to-br from-gray-50/50 to-white border-t border-gray-100/50 stats-entrance">
       <div className="container-max px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
