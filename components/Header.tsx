@@ -1,134 +1,128 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Menu,
   X,
-  Phone,
-  Mail,
-  Heart,
   ChevronDown,
+  Globe,
+  Eye,
+  Bone,
+  Sparkles,
   ArrowRight,
 } from "lucide-react";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const { language, setLanguage, t } = useLanguage();
+  // Detay sayfalarında başlangıçta scroll yapılmış gibi davran
+  const [isScrolled, setIsScrolled] = useState(!isHomePage);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(
     null
   );
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    // Sayfa değiştiğinde scroll durumunu güncelle
+    if (!isHomePage) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(window.scrollY > 50);
+    }
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
+
+  const getNavHref = (hash: string) => {
+    // Hash linkler için: ana sayfada direkt hash, diğer sayfalarda / ile başlayan hash
+    if (hash.startsWith("#")) {
+      return isHomePage ? hash : `/${hash}`;
+    }
+    return hash;
+  };
 
   const navItems = [
-    { name: "Ana Sayfa", href: "#home" },
-    {
-      name: "Hizmetler",
-      href: "#services",
-      dropdown: [
+    { name: t("nav.about"), href: getNavHref("#about") },
+    { 
+      name: t("nav.products"), 
+      href: getNavHref("#products"),
+      hasDropdown: true,
+      dropdownItems: [
         {
-          name: "Kardiyovasküler Çözümler",
-          href: "#services",
-          icon: "💓",
-          description: "Kalp sağlığı için gelişmiş teknolojiler",
-          color: "from-red-500 to-pink-500",
+          name: "Intraocular Viscoelastics",
+          nameTr: language === "tr" ? "İntraoküler Viskoelastikler" : language === "en" ? "Intraocular Viscoelastics" : "Intraokuläre Viskoelastika",
+          href: "/products/intraocular",
+          icon: Eye,
+          description: language === "tr" ? "Göz cerrahisi için premium oftalmik viskoelastik çözümler" : language === "en" ? "Premium ophthalmic viscoelastic solutions for eye surgery" : "Premium ophthalmische viskoelastische Lösungen für die Augenchirurgie",
         },
         {
-          name: "Laboratuvar Teknolojileri",
-          href: "#services",
-          icon: "🔬",
-          description: "Hassas analiz ve test sistemleri",
-          color: "from-blue-500 to-cyan-500",
+          name: "Intra-articular Viscoelastics",
+          nameTr: language === "tr" ? "İntraartiküler Viskoelastikler" : language === "en" ? "Intra-articular Viscoelastics" : "Intraartikuläre Viskoelastika",
+          href: "/products/intra-articular",
+          icon: Bone,
+          description: language === "tr" ? "Ortopedik uygulamalar için gelişmiş eklem enjeksiyonu çözümleri" : language === "en" ? "Advanced joint injection solutions for orthopedic applications" : "Fortschrittliche Gelenkinjektionslösungen für orthopädische Anwendungen",
         },
         {
-          name: "Tanı Ekipmanları",
-          href: "#services",
-          icon: "🩺",
-          description: "Modern görüntüleme ve tanı cihazları",
-          color: "from-green-500 to-emerald-500",
-        },
-        {
-          name: "Hasta Monitörizasyonu",
-          href: "#services",
-          icon: "📊",
-          description: "7/24 hasta takip sistemleri",
-          color: "from-purple-500 to-violet-500",
-        },
-        {
-          name: "Enfeksiyon Kontrolü",
-          href: "#services",
-          icon: "🛡️",
-          description: "Sterilizasyon ve hijyen çözümleri",
-          color: "from-amber-500 to-orange-500",
-        },
-        {
-          name: "Acil Tıp Çözümleri",
-          href: "#services",
-          icon: "⚡",
-          description:
-            "Kritik durumlarda hayat kurtaran teknolojiler",
-          color: "from-rose-500 to-red-500",
+          name: "Dermal Fillers",
+          nameTr: language === "tr" ? "Dermal Dolgu & Kozmetik" : language === "en" ? "Dermal Fillers" : "Dermale Filler",
+          href: "/products/dermal-fillers",
+          icon: Sparkles,
+          description: language === "tr" ? "Geliştirme için lüks estetik ürünler" : language === "en" ? "Luxury aesthetic products for enhancement" : "Luxus-ästhetische Produkte zur Verbesserung",
         },
       ],
     },
-    { name: "Hakkımızda", href: "#about" },
-    { name: "Blog", href: "#blog" },
-    { name: "İletişim", href: "#contact" },
+    { name: t("nav.media"), href: "/media" },
+    { name: t("nav.career"), href: "/career" },
+    { name: t("nav.contact"), href: getNavHref("#contact") },
   ];
 
-  let dropdownTimeout: NodeJS.Timeout;
+  const languages = [
+    { code: "tr" as const, name: "Türkçe" },
+    { code: "en" as const, name: "English" },
+    { code: "de" as const, name: "Deutsch" },
+  ];
 
   const handleDropdownEnter = (itemName: string) => {
-    clearTimeout(dropdownTimeout);
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
     setActiveDropdown(itemName);
   };
 
   const handleDropdownLeave = () => {
-    dropdownTimeout = setTimeout(() => {
+    dropdownTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
     }, 150); // 150ms delay before closing
   };
 
   const handleDropdownStay = () => {
-    clearTimeout(dropdownTimeout);
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+  };
+
+  const handleLanguageSelect = (lang: { code: "tr" | "en" | "de"; name: string }) => {
+    setLanguage(lang.code);
+    setActiveDropdown(null);
   };
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-primary-800 text-white py-2 text-sm relative z-50">
-        <div className="container-max px-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center hover:text-accent-400 transition-colors duration-200">
-                <Phone className="h-4 w-4 mr-2" />
-                <span>+90 312 123 45 67</span>
-              </div>
-              <div className="flex items-center hover:text-accent-400 transition-colors duration-200">
-                <Mail className="h-4 w-4 mr-2" />
-                <span>info@biomiramed.com</span>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center space-x-4 text-primary-100">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                <span>7/24 Acil Destek Hattı</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Header */}
       <header
-        className={`fixed top-10 w-full z-50 transition-all duration-500 ${
-          isScrolled
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+          isScrolled || !isHomePage
             ? "bg-white/95 backdrop-blur-lg shadow-2xl border-b border-gray-100"
             : "bg-white/10 backdrop-blur-sm"
         }`}
@@ -136,51 +130,40 @@ const Header = () => {
         <div className="container-max">
           <div className="flex items-center justify-between h-20 px-4">
             {/* Logo */}
-            <div className="flex items-center space-x-3 logo-container">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
-                <Heart className="h-7 w-7 text-white" />
-              </div>
-              <div>
-                <div
-                  className={`text-2xl font-heading font-bold transition-colors duration-300 ${
-                    isScrolled ? "text-primary-600" : "text-white"
-                  }`}
-                >
-                  BiomiraMed
+            <div className="flex items-center logo-container">
+              <Link href="/" className="relative flex items-center justify-center">
+                <div className="relative h-14 md:h-16 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                  <Image
+                    src="/assets/BIOMIRA LOGO-1.png"
+                    alt="BiomiraMed Logo"
+                    width={200}
+                    height={64}
+                    className="object-contain drop-shadow-lg"
+                    priority
+                  />
                 </div>
-                <div
-                  className={`text-xs font-medium transition-colors duration-300 ${
-                    isScrolled
-                      ? "text-primary-400"
-                      : "text-primary-100"
-                  }`}
-                >
-                  Sağlık Teknolojileri
-                </div>
-              </div>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="relative"
-                  onMouseEnter={() =>
-                    item.dropdown && handleDropdownEnter(item.name)
-                  }
-                  onMouseLeave={handleDropdownLeave}
-                >
-                  <a
-                    href={item.href}
-                    className={`nav-link relative font-medium transition-all duration-300 hover:scale-105 group flex items-center py-2 px-1 ${
-                      isScrolled
-                        ? "text-gray-700 hover:text-primary-500"
-                        : "text-white hover:text-accent-400"
-                    }`}
+                item.hasDropdown ? (
+                  <div
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() => handleDropdownEnter(item.name)}
+                    onMouseLeave={handleDropdownLeave}
                   >
-                    {item.name}
-                    {item.dropdown && (
+                    <Link
+                      href={item.href}
+                      className={`nav-link relative font-medium transition-all duration-300 hover:scale-105 group flex items-center py-2 px-1 ${
+                        isScrolled || !isHomePage
+                          ? "text-gray-700 hover:text-primary-500"
+                          : "text-white hover:text-accent-400"
+                      }`}
+                    >
+                      {item.name}
                       <ChevronDown
                         className={`ml-1 h-4 w-4 transition-transform duration-300 ${
                           activeDropdown === item.name
@@ -188,94 +171,117 @@ const Header = () => {
                             : ""
                         }`}
                       />
-                    )}
-                  </a>
+                    </Link>
 
-                  {/* Enhanced Dropdown Menu */}
-                  {item.dropdown && activeDropdown === item.name && (
-                    <div
-                      className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-96 bg-gradient-to-br from-white/95 to-gray-50/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden animate-fade-in dropdown-shadow"
-                      onMouseEnter={handleDropdownStay}
-                      onMouseLeave={handleDropdownLeave}
-                    >
-                      {/* Header */}
-                      <div className="bg-gradient-to-r from-primary-500/90 to-primary-600/90 backdrop-blur-sm p-6 text-white relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20"></div>
-                        <div className="relative z-10">
-                          <h3 className="text-lg font-heading font-bold mb-2">
-                            Sağlık Teknolojileri
-                          </h3>
-                          <p className="text-primary-100 text-sm">
-                            Uzman çözümlerimizi keşfedin
-                          </p>
+                    {/* Products Dropdown Menu */}
+                    {activeDropdown === item.name && (
+                      <div
+                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-96 bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden z-[100]"
+                        onMouseEnter={handleDropdownStay}
+                        onMouseLeave={handleDropdownLeave}
+                        style={{ 
+                          animation: "fadeIn 0.2s ease-in",
+                          opacity: 1,
+                          visibility: "visible"
+                        }}
+                      >
+                        <div className="p-4">
+                          {item.dropdownItems?.map((dropdownItem, index) => (
+                            <Link
+                              key={index}
+                              href={dropdownItem.href}
+                              className="flex items-center p-4 rounded-2xl hover:bg-white/60 hover:backdrop-blur-sm transition-all duration-300 group border-l-4 border-transparent hover:border-primary-500/50 mb-2"
+                            >
+                              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary-500/10 to-primary-600/10 rounded-xl mr-4 group-hover:from-primary-500/20 group-hover:to-primary-600/20 transition-all duration-300">
+                                <dropdownItem.icon className="h-6 w-6 text-primary-600" />
+                              </div>
+                              <div className="flex-1">
+                                <div className="font-semibold text-gray-800 group-hover:text-primary-600 transition-colors duration-300 mb-1">
+                                  {dropdownItem.nameTr}
+                                </div>
+                                <div className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                                  {dropdownItem.description}
+                                </div>
+                              </div>
+                              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all duration-300" />
+                            </Link>
+                          ))}
+                        </div>
+                        <div className="bg-gradient-to-r from-gray-50/80 to-white/80 backdrop-blur-sm p-4 border-t border-white/30">
+                          <Link
+                            href={getNavHref("#contact")}
+                            className="flex items-center justify-center w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group"
+                          >
+                            <span>Uzmanla İletişime Geç</span>
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                          </Link>
                         </div>
                       </div>
-
-                      {/* Menu Items */}
-                      <div className="p-3 max-h-80 overflow-y-auto">
-                        {item.dropdown.map((dropdownItem, index) => (
-                          <a
-                            key={index}
-                            href={dropdownItem.href}
-                            className="dropdown-item flex items-center p-4 rounded-2xl hover:bg-white/60 hover:backdrop-blur-sm transition-all duration-300 group border-l-4 border-transparent hover:border-primary-500/50 mb-1"
-                          >
-                            <div
-                              className={`flex items-center justify-center w-12 h-12 bg-gradient-to-br ${dropdownItem.color} rounded-xl mr-4 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}
-                            >
-                              <span className="text-lg filter drop-shadow-sm">
-                                {dropdownItem.icon}
-                              </span>
-                            </div>
-                            <div className="flex-1">
-                              <div className="font-semibold text-gray-800 group-hover:text-primary-600 transition-colors duration-300 mb-1">
-                                {dropdownItem.name}
-                              </div>
-                              <div className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-                                {dropdownItem.description}
-                              </div>
-                            </div>
-                            <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all duration-300" />
-                          </a>
-                        ))}
-                      </div>
-
-                      {/* Footer */}
-                      <div className="bg-gradient-to-r from-gray-50/80 to-white/80 backdrop-blur-sm p-4 border-t border-white/30">
-                        <a
-                          href="#services"
-                          className="flex items-center justify-center w-full py-3 bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group"
-                        >
-                          <span>Tüm Hizmetleri Keşfet</span>
-                          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        </a>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`nav-link relative font-medium transition-all duration-300 hover:scale-105 py-2 px-1 ${
+                      isScrolled || !isHomePage
+                        ? "text-gray-700 hover:text-primary-500"
+                        : "text-white hover:text-accent-400"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
-            </nav>
 
-            {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <a
-                href="tel:+903121234567"
-                className={`flex items-center space-x-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 hover:scale-105 ${
-                  isScrolled
-                    ? "text-primary-600 hover:bg-primary-50"
-                    : "text-white hover:bg-white/10"
-                }`}
+              {/* Language Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownEnter("language")}
+                onMouseLeave={handleDropdownLeave}
               >
-                <Phone className="h-4 w-4" />
-                <span>Ara</span>
-              </a>
-              <a
-                href="#contact"
-                className="bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 relative overflow-hidden group"
-              >
-                <span className="relative z-10">Randevu Al</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-accent-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </a>
-            </div>
+                <button
+                  className={`nav-link relative font-medium transition-all duration-300 hover:scale-105 group flex items-center py-2 px-1 ${
+                    isScrolled || !isHomePage
+                      ? "text-gray-700 hover:text-primary-500"
+                      : "text-white hover:text-accent-400"
+                  }`}
+                >
+                  <Globe className="h-4 w-4 mr-2" />
+                  <span>{t("nav.language")}</span>
+                  <ChevronDown
+                    className={`ml-1 h-4 w-4 transition-transform duration-300 ${
+                      activeDropdown === "language"
+                        ? "rotate-180 text-accent-500"
+                        : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Language Dropdown Menu */}
+                {activeDropdown === "language" && (
+                  <div
+                    className="absolute top-full right-0 mt-3 w-48 bg-gradient-to-br from-white/95 to-gray-50/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden animate-fade-in"
+                    onMouseEnter={handleDropdownStay}
+                    onMouseLeave={handleDropdownLeave}
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageSelect(lang)}
+                        className={`w-full text-left px-4 py-3 hover:bg-primary-50 transition-all duration-200 ${
+                          language === lang.code
+                            ? "bg-primary-100 text-primary-600 font-semibold"
+                            : "text-gray-700 hover:text-primary-600"
+                        }`}
+                      >
+                        {lang.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </nav>
 
             {/* Mobile Menu Button */}
             <button
@@ -285,13 +291,13 @@ const Header = () => {
               {isMobileMenuOpen ? (
                 <X
                   className={`h-6 w-6 ${
-                    isScrolled ? "text-gray-700" : "text-white"
+                    isScrolled || !isHomePage ? "text-gray-700" : "text-white"
                   }`}
                 />
               ) : (
                 <Menu
                   className={`h-6 w-6 ${
-                    isScrolled ? "text-gray-700" : "text-white"
+                    isScrolled || !isHomePage ? "text-gray-700" : "text-white"
                   }`}
                 />
               )}
@@ -302,60 +308,71 @@ const Header = () => {
           {isMobileMenuOpen && (
             <div className="lg:hidden bg-white/95 backdrop-blur-lg shadow-2xl rounded-2xl mx-4 mb-4 overflow-hidden animate-fade-in">
               <nav className="py-6">
-                {navItems.map((item, index) => (
-                  <div key={item.name} className="mobile-menu-item">
-                    <a
+                {navItems.map((item) => (
+                  item.hasDropdown ? (
+                    <div key={item.name}>
+                      <div className="px-6 py-4 text-gray-700 font-medium border-l-4 border-transparent">
+                        {item.name}
+                      </div>
+                      <div className="pl-4 pb-2 bg-gray-50 mx-4 rounded-xl mt-2">
+                        {item.dropdownItems?.map((dropdownItem, index) => (
+                          <Link
+                            key={index}
+                            href={dropdownItem.href}
+                            className="flex items-center px-4 py-3 text-sm text-gray-600 hover:text-primary-500 hover:bg-white transition-all duration-200 rounded-lg"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <dropdownItem.icon className="h-5 w-5 mr-3 text-primary-600" />
+                            <div>
+                              <div className="font-medium">
+                                {dropdownItem.nameTr}
+                              </div>
+                              <div className="text-xs text-gray-500">
+                                {dropdownItem.description}
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.name}
                       href={item.href}
                       className="block px-6 py-4 text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-200 border-l-4 border-transparent hover:border-primary-500 font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
-                    </a>
-                    {/* Mobile Dropdown */}
-                    {item.dropdown && (
-                      <div className="pl-4 pb-2 bg-gray-50 mx-4 rounded-xl mt-2">
-                        {item.dropdown.map(
-                          (dropdownItem, dropdownIndex) => (
-                            <a
-                              key={dropdownIndex}
-                              href={dropdownItem.href}
-                              className="flex items-center px-4 py-3 text-sm text-gray-600 hover:text-primary-500 hover:bg-white transition-all duration-200 rounded-lg"
-                              onClick={() =>
-                                setIsMobileMenuOpen(false)
-                              }
-                            >
-                              <span className="mr-3 text-lg">
-                                {dropdownItem.icon}
-                              </span>
-                              <div>
-                                <div className="font-medium">
-                                  {dropdownItem.name}
-                                </div>
-                                <div className="text-xs text-gray-500">
-                                  {dropdownItem.description}
-                                </div>
-                              </div>
-                            </a>
-                          )
-                        )}
-                      </div>
-                    )}
-                  </div>
+                    </Link>
+                  )
                 ))}
-                <div className="px-6 pt-4 space-y-3">
-                  <a
-                    href="tel:+903121234567"
-                    className="flex items-center justify-center space-x-2 w-full py-3 text-primary-600 border-2 border-primary-500 rounded-xl font-semibold hover:bg-primary-50 transition-all duration-200"
-                  >
-                    <Phone className="h-4 w-4" />
-                    <span>Hemen Ara</span>
-                  </a>
-                  <a
-                    href="#contact"
-                    className="block w-full py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white text-center rounded-xl font-semibold shadow-lg"
-                  >
-                    Randevu Al
-                  </a>
+                
+                {/* Mobile Language Dropdown */}
+                <div className="px-6 py-4 border-t border-gray-200">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-gray-700 font-medium flex items-center">
+                      <Globe className="h-4 w-4 mr-2" />
+                      {t("nav.language")}
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          handleLanguageSelect(lang);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-200 ${
+                          language === lang.code
+                            ? "bg-primary-100 text-primary-600 font-semibold"
+                            : "text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                        }`}
+                      >
+                        {lang.name}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </nav>
             </div>

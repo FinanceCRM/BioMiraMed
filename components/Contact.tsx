@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,8 +35,8 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: "Telefon",
-      details: ["+90 312 123 45 67", "+90 312 123 45 68"],
+      title: t("contact.phone"),
+      details: ["0216 472 41 94"],
       color: "text-primary-500",
     },
     {
@@ -65,11 +67,10 @@ const Contact = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">
-            İletişim
+            {t("contact.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Projeleriniz için bizimle iletişime geçin. Uzman ekibimiz
-            size en uygun çözümü sunmak için hazır.
+            {t("contact.description")}
           </p>
         </div>
 
@@ -101,16 +102,18 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map Placeholder */}
-            <div className="mt-8 aspect-video bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl overflow-hidden">
-              <div className="w-full h-full bg-primary-500/10 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-primary-500 mx-auto mb-2" />
-                  <p className="text-primary-700 font-medium">
-                    Harita Görünümü
-                  </p>
-                </div>
-              </div>
+            {/* Map */}
+            <div className="mt-8 aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6249762070247!2d29.099425276759025!3d40.98969212056813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac62fba0906f3%3A0x876cd8006ac06c5b!2zQsO8ecO8a2VtaXIgUGxhemE!5e0!3m2!1str!2str!4v1767990393322!5m2!1str!2str"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
             </div>
           </div>
 
@@ -124,7 +127,7 @@ const Contact = () => {
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Ad Soyad *
+                      {t("contact.name")} *
                     </label>
                     <input
                       type="text"
@@ -134,7 +137,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Adınızı ve soyadınızı girin"
+                      placeholder={t("contact.namePlaceholder")}
                     />
                   </div>
 
@@ -143,7 +146,7 @@ const Contact = () => {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      E-posta *
+                      {t("contact.email")} *
                     </label>
                     <input
                       type="email"
@@ -153,7 +156,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                      placeholder="E-posta adresinizi girin"
+                      placeholder={t("contact.emailPlaceholder")}
                     />
                   </div>
                 </div>
@@ -164,7 +167,7 @@ const Contact = () => {
                       htmlFor="phone"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Telefon
+                      {t("contact.phone")}
                     </label>
                     <input
                       type="tel"
@@ -173,7 +176,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Telefon numaranızı girin"
+                      placeholder={t("contact.phonePlaceholder")}
                     />
                   </div>
 
@@ -182,7 +185,7 @@ const Contact = () => {
                       htmlFor="company"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Kurum/Şirket
+                      {t("contact.company")}
                     </label>
                     <input
                       type="text"
@@ -191,7 +194,7 @@ const Contact = () => {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Kurum veya şirket adı"
+                      placeholder={t("contact.companyPlaceholder")}
                     />
                   </div>
                 </div>
@@ -201,7 +204,7 @@ const Contact = () => {
                     htmlFor="subject"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Konu *
+                    {t("contact.subject")} *
                   </label>
                   <select
                     id="subject"
@@ -211,7 +214,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                   >
-                    <option value="">Konu seçiniz</option>
+                    <option value="">{t("contact.subjectPlaceholder")}</option>
                     <option value="product-inquiry">
                       Ürün Bilgisi
                     </option>
@@ -228,7 +231,7 @@ const Contact = () => {
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Mesaj *
+                    {t("contact.message")} *
                   </label>
                   <textarea
                     id="message"
@@ -238,7 +241,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Mesajınızı buraya yazın..."
+                    placeholder={t("contact.messagePlaceholder")}
                   />
                 </div>
 
@@ -247,7 +250,7 @@ const Contact = () => {
                   className="btn-primary w-full group"
                 >
                   <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-                  Mesaj Gönder
+                  {t("contact.send")}
                 </button>
               </form>
             </div>

@@ -1,32 +1,25 @@
 "use client";
 
-import { Shield, Zap, Users, Award } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Leaf, FlaskConical, Award } from "lucide-react";
 
 const WhyChooseUs = () => {
+  const { t } = useLanguage();
   const features = [
     {
-      icon: Shield,
-      title: "Güvenilir Kalite",
-      description:
-        "Uluslararası standartlarda üretim ve kalite kontrol süreçleri ile güvenilir ürünler sunuyoruz.",
+      icon: Leaf,
+      title: t("whyChooseUs.sustainable.title"),
+      description: t("whyChooseUs.sustainable.description"),
     },
     {
-      icon: Zap,
-      title: "Hızlı Çözümler",
-      description:
-        "Acil ihtiyaçlarınıza 24/7 destek ve hızlı teslimat ile anında çözüm sağlıyoruz.",
-    },
-    {
-      icon: Users,
-      title: "Uzman Ekip",
-      description:
-        "Alanında uzman mühendis ve teknisyenlerden oluşan deneyimli ekibimizle hizmet veriyoruz.",
+      icon: FlaskConical,
+      title: t("whyChooseUs.research.title"),
+      description: t("whyChooseUs.research.description"),
     },
     {
       icon: Award,
-      title: "Sertifikalı Ürünler",
-      description:
-        "CE, ISO ve diğer uluslararası sertifikalara sahip, onaylanmış ürün portföyümüz bulunuyor.",
+      title: t("whyChooseUs.excellence.title"),
+      description: t("whyChooseUs.excellence.description"),
     },
   ];
 
@@ -35,15 +28,14 @@ const WhyChooseUs = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-            Neden BiomiraMed?
+            {t("whyChooseUs.title")}
           </h2>
           <p className="text-xl text-primary-100 max-w-3xl mx-auto">
-            Sağlık teknolojileri alanında güvenilir partneriniz olmak
-            için sürekli gelişim gösteriyoruz
+            {t("whyChooseUs.description")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -68,21 +60,20 @@ const WhyChooseUs = () => {
         <div className="text-center mt-16">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-heading font-semibold text-white mb-4">
-              Projeleriniz için doğru çözümü birlikte bulalım
+              {t("whyChooseUs.ctaTitle")}
             </h3>
             <p className="text-primary-100 mb-6">
-              Uzman ekibimiz, ihtiyaçlarınıza özel çözümler
-              geliştirmek için sizinle çalışmaya hazır
+              {t("whyChooseUs.ctaDescription")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#contact" className="btn-secondary">
-                Ücretsiz Danışmanlık
+                {t("whyChooseUs.ctaButton1")}
               </a>
               <a
                 href="#services"
                 className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200"
               >
-                Ürünleri İncele
+                {t("whyChooseUs.ctaButton2")}
               </a>
             </div>
           </div>
