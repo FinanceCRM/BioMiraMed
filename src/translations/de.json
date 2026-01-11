@@ -1,0 +1,186 @@
+{
+    "nav": {
+        "about": "Über uns",
+        "products": "Produkte",
+        "media": "Medien",
+        "career": "Karriere",
+        "contact": "Kontakt",
+        "language": "Sprache"
+    },
+    "hero": {
+        "badge": "Führer in Gesundheitstechnologie",
+        "title": "Fortschrittliche Technologie",
+        "subtitle": "Zuverlässige Lösungen",
+        "description": "Mit über 15 Jahren Erfahrung bieten wir Gesundheitsfachkräften Lösungen von höchster Qualität."
+    },
+    "about": {
+        "badge": "Über uns",
+        "title": "Vertrauenspartner in",
+        "subtitle": "Gesundheitstechnologien",
+        "description1": "Als BiomiraMed sind wir eines der führenden Unternehmen im Gesundheitssektor mit über 15 Jahren Erfahrung.",
+        "description2": "Unsere Mission ist es, Gesundheitsfachkräften mit modernsten Technologien zuverlässige Lösungen anzubieten."
+    },
+    "products": {
+        "title": "Innovative Produkte",
+        "cta": "Details anzeigen",
+        "viscoPhi": {
+            "category": "Intraartikuläre Lösungen",
+            "title": "ViscoPhi™",
+            "description": "ViscoPhi™ ist eine sterile intraartikuläre viskoelastische Lösung.",
+            "feature1": "Lineare Bindung",
+            "feature2": "Nicht-tierische Quelle",
+            "feature3": "Hohe Viskosität"
+        },
+        "visOcu": {
+            "category": "Intraokuläre Lösungen",
+            "title": "VisOcu™",
+            "description": "VisOcu™ ist eine sterile viskoelastische Zubereitung.",
+            "feature1": "8 Dosierungen",
+            "feature2": "Augenschutz",
+            "feature3": "Hohes Molekulargewicht"
+        },
+        "philExir": {
+            "category": "Dermale Filler",
+            "title": "PhilExir™",
+            "description": "PhilExir™ revitalisiert Gesichtskonturen.",
+            "feature1": "Lineare Formulierungen",
+            "feature2": "Vollere Gesichtszüge",
+            "feature3": "Jugendliches Aussehen",
+            "feature4": "Anti-Aging"
+        },
+        "ctaTitle": "Suchen Sie maßgeschneiderte Lösungen?",
+        "ctaDescription": "Unser Expertenteam ist bereit.",
+        "ctaButton1": "Kostenlose Beratung",
+        "ctaButton2": "Jetzt anrufen",
+        "detail": {
+            "back": "Zur Startseite",
+            "contactTitle": "Kontakt für Kataloginformationen",
+            "contactDescription": "Kontaktieren Sie uns für weitere Informationen",
+            "intraocular": {
+                "title": "Intraokuläre Viskoelastika",
+                "description": "Premium ophthalmische Lösungen.",
+                "filter1": "Hohe Klarheit",
+                "filter2": "Kohäsive Optionen",
+                "filter3": "Augenschutz"
+            },
+            "intraArticular": {
+                "title": "Intraartikuläre Viskoelastika",
+                "description": "Fortschrittliche Gelenkinjektionslösungen.",
+                "filter1": "Sanfte Injektion",
+                "filter2": "Stabilität",
+                "filter3": "Patientenkomfort"
+            },
+            "dermalFillers": {
+                "title": "Dermaler Filler",
+                "description": "Luxus-ästhetische Produkte.",
+                "filter1": "Natürliches Aussehen",
+                "filter2": "Sicherheit",
+                "filter3": "Langlebig"
+            }
+        }
+    },
+    "whyChooseUs": {
+        "title": "Warum BiomiraMed?",
+        "description": "Ihr vertrauenswürdiger Partner",
+        "sustainable": {
+            "title": "Nachhaltige Praktiken",
+            "description": "Umweltverantwortung."
+        },
+        "research": {
+            "title": "Fortschrittliche Forschung",
+            "description": "Modernste Laboreinrichtungen."
+        },
+        "excellence": {
+            "title": "Qualitätsexzellenz",
+            "description": "Höchste Standards."
+        },
+        "ctaTitle": "Lassen Sie uns die richtige Lösung finden",
+        "ctaDescription": "Unser Team ist bereit",
+        "ctaButton1": "Kostenlose Beratung",
+        "ctaButton2": "Produkte anzeigen"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "subtitle": "Haben Sie Fragen?",
+        "description": "Kontaktieren Sie uns.",
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "address": "Adresse",
+        "workingHours": "Arbeitszeiten",
+        "mapView": "Kartenansicht",
+        "name": "Name",
+        "company": "Unternehmen",
+        "subject": "Betreff",
+        "message": "Nachricht",
+        "send": "Senden",
+        "sending": "Wird gesendet...",
+        "success": "Erfolgreich gesendet!",
+        "error": "Fehler aufgetreten.",
+        "namePlaceholder": "Ihr Name",
+        "emailPlaceholder": "email@beispiel.com",
+        "phonePlaceholder": "+90 555 123 4567",
+        "companyPlaceholder": "Firmenname",
+        "subjectPlaceholder": "Betreff wählen",
+        "messagePlaceholder": "Ihre Nachricht..."
+    },
+    "media": {
+        "title": "Medien",
+        "subtitle": "Zentrum",
+        "description": "Entdecken Sie unsere Produkte.",
+        "productPackaging": "Produktverpackung",
+        "events": "Veranstaltungen",
+        "gallery": "Galerie",
+        "items": "Artikel",
+        "item": "Artikel",
+        "ctaTitle": "Benötigen Sie weitere Informationen?",
+        "ctaButton": "Kontakt"
+    },
+    "career": {
+        "heroTitle": "Treten Sie unserer",
+        "heroSubtitle": "Mission bei",
+        "heroDescription": "Seien Sie Teil des Teams.",
+        "heroButton": "Jetzt bewerben",
+        "whyTitle": "Warum BiomiraMed?",
+        "whyDescription": "Innovation und Zusammenarbeit.",
+        "collaborative": {
+            "title": "Kollaborative Kultur",
+            "description": "Talentierte Fachleute."
+        },
+        "development": {
+            "title": "Karriereentwicklung",
+            "description": "Lernmöglichkeiten."
+        },
+        "balance": {
+            "title": "Work-Life-Balance",
+            "description": "Flexible Arbeitsvereinbarungen."
+        },
+        "innovation": {
+            "title": "Innovation",
+            "description": "Modernste Forschung."
+        },
+        "openingsTitle": "Stellenangebote",
+        "openingsDescription": "Keine offenen Stellen.",
+        "openingsButton": "CV senden",
+        "applyTitle": "Jetzt bewerben",
+        "applyDescription": "Senden Sie Ihre Bewerbung.",
+        "formName": "Name",
+        "formEmail": "E-Mail",
+        "formPhone": "Telefon",
+        "formPosition": "Position",
+        "formCV": "Lebenslauf hochladen",
+        "formCoverLetter": "Anschreiben",
+        "formSelectFile": "Datei auswählen",
+        "formNoFile": "Keine Datei",
+        "formFileFormats": "PDF, DOC, DOCX (Max 5MB)",
+        "formCoverLetterPlaceholder": "Warum BiomiraMed?",
+        "formSubmit": "Bewerbung senden",
+        "benefitsTitle": "Vorteile",
+        "benefitsDescription": "Umfassende Vorteile.",
+        "benefit1": "Krankenversicherung",
+        "benefit2": "Schulungsmöglichkeiten",
+        "benefit3": "Internationale Zusammenarbeit",
+        "benefit4": "Wettbewerbsfähiges Gehalt",
+        "benefit5": "Vielfältige Teamkultur",
+        "benefit6": "Flexible Arbeitszeiten"
+    }
+}

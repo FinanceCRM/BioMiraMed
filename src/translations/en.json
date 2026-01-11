@@ -1,0 +1,186 @@
+{
+    "nav": {
+        "about": "About",
+        "products": "Products",
+        "media": "Media",
+        "career": "Career",
+        "contact": "Contact",
+        "language": "Language"
+    },
+    "hero": {
+        "badge": "Healthcare Technology Leader",
+        "title": "Advanced Technology",
+        "subtitle": "Reliable Solutions",
+        "description": "With over 15 years of experience, we provide the highest quality technological solutions to healthcare professionals."
+    },
+    "about": {
+        "badge": "About Us",
+        "title": "Trusted Partner in",
+        "subtitle": "Healthcare Technologies",
+        "description1": "As BiomiraMed, we are one of the leading companies in the healthcare technology sector with over 15 years of experience. We continue to add value to the healthcare sector with our innovative solutions and quality service approach.",
+        "description2": "Our mission is to provide reliable, effective and user-friendly solutions to healthcare professionals using the latest technologies. By aiming for excellence in every project, we focus on improving patient care quality."
+    },
+    "products": {
+        "title": "Innovative Products",
+        "cta": "View Details",
+        "viscoPhi": {
+            "category": "Intra-articular Solutions",
+            "title": "ViscoPhi™",
+            "description": "ViscoPhi™ is a sterile ready-to-use intra-articular viscoelastic implant gel solution to treat human joint disorders such as osteoarthritis and it comes in a prefilled, ready to use syringe.",
+            "feature1": "Linear bond, Crosslinked and Combined Hyaluronic Acid",
+            "feature2": "Non-animal source",
+            "feature3": "High viscosity and molecular weight"
+        },
+        "visOcu": {
+            "category": "Intra-ocular Solutions",
+            "title": "VisOcu™",
+            "description": "VisOcu™ is a sterile, cohesive, isotonic, pyrogen-free, and viscoelastic preparation of highly purified HA and HPMC.",
+            "feature1": "8 different dosages",
+            "feature2": "Lubrication, support and protection of ocular tissues",
+            "feature3": "High molecular weight and viscosity"
+        },
+        "philExir": {
+            "category": "Dermal Fillers",
+            "title": "PhilExir™",
+            "description": "PhilExir™ is a cutting-edge injectable designed to revitalize facial contours and awaken skin radiance, helping you look refreshed, lifted, and beautifully renewed.",
+            "feature1": "Linear and Crosslinked formulations",
+            "feature2": "Fuller facial features",
+            "feature3": "Bright and youthful appearance",
+            "feature4": "Challenge fatigue and aging with PhilExir"
+        },
+        "ctaTitle": "Looking for Custom Solutions?",
+        "ctaDescription": "Our expert team is ready to develop custom healthcare technology solutions for you. Contact us immediately and let's bring your projects to life.",
+        "ctaButton1": "Free Consultation",
+        "ctaButton2": "Call Now",
+        "detail": {
+            "back": "Return to Homepage",
+            "contactTitle": "Contact for catalog information",
+            "contactDescription": "Contact us to get more information about our product catalogs",
+            "intraocular": {
+                "title": "Intraocular Viscoelastics",
+                "description": "Premium ophthalmic viscoelastic solutions designed for optimal surgical control and eye protection.",
+                "filter1": "High clarity",
+                "filter2": "Cohesive/Rheology options",
+                "filter3": "Eye protection"
+            },
+            "intraArticular": {
+                "title": "Intra-articular Viscoelastics",
+                "description": "Advanced joint injection solutions designed to increase mobility and reduce discomfort.",
+                "filter1": "Smooth injection",
+                "filter2": "Formulation stability",
+                "filter3": "Patient comfort"
+            },
+            "dermalFillers": {
+                "title": "Dermal Filler & Cosmetics",
+                "description": "Luxury aesthetic products focused on natural-looking improvement, safety, and long life.",
+                "filter1": "Natural appearance",
+                "filter2": "Safety first",
+                "filter3": "Long-lasting"
+            }
+        }
+    },
+    "whyChooseUs": {
+        "title": "Why BiomiraMed?",
+        "description": "We continuously improve to be your trusted partner in healthcare technologies",
+        "sustainable": {
+            "title": "Sustainable Practices",
+            "description": "Every process is designed on the basis of environmental responsibility."
+        },
+        "research": {
+            "title": "Advanced Research",
+            "description": "State-of-the-art laboratory facilities and the most modern equipment."
+        },
+        "excellence": {
+            "title": "Quality Excellence",
+            "description": "Award-winning commitment to the highest quality and safety standards."
+        },
+        "ctaTitle": "Let's find the right solution for your projects together",
+        "ctaDescription": "Our expert team is ready to work with you to develop custom solutions for your needs",
+        "ctaButton1": "Free Consultation",
+        "ctaButton2": "View Products"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Have questions? Get in touch with us",
+        "description": "Contact us for your projects. Our expert team is ready to offer you the most suitable solution.",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "workingHours": "Working Hours",
+        "mapView": "Map View",
+        "name": "Full Name",
+        "company": "Company",
+        "subject": "Subject",
+        "message": "Your Message",
+        "send": "Send",
+        "sending": "Sending...",
+        "success": "Your message has been sent successfully!",
+        "error": "An error occurred. Please try again.",
+        "namePlaceholder": "Enter your name and surname",
+        "emailPlaceholder": "email@example.com",
+        "phonePlaceholder": "+90 (555) 123-4567",
+        "companyPlaceholder": "Enter your company name",
+        "subjectPlaceholder": "Select a subject",
+        "messagePlaceholder": "Write your message here..."
+    },
+    "media": {
+        "title": "Media",
+        "subtitle": "Center",
+        "description": "Explore our product packaging, events, and gallery. Discover our innovative biotechnology solutions.",
+        "productPackaging": "Product Packaging",
+        "events": "Events & Conferences",
+        "gallery": "Gallery",
+        "items": "items",
+        "item": "item",
+        "ctaTitle": "Need more information or have questions about our products?",
+        "ctaButton": "Contact Us"
+    },
+    "career": {
+        "heroTitle": "Join Our",
+        "heroSubtitle": "Mission",
+        "heroDescription": "Be a part of the pioneering team that revolutionizes healthcare services with innovative biotechnology solutions.",
+        "heroButton": "Apply Now",
+        "whyTitle": "Why should you join BiomiraMed?",
+        "whyDescription": "Our company culture is built on a commitment to creating a positive impact in innovation, collaboration, and healthcare services.",
+        "collaborative": {
+            "title": "Collaborative Culture",
+            "description": "Work with talented professionals who share a passion for innovation and excellence."
+        },
+        "development": {
+            "title": "Career Development",
+            "description": "Clear paths for continuous learning opportunities and professional advancement."
+        },
+        "balance": {
+            "title": "Work-Life Balance",
+            "description": "We prioritize your well-being with flexible work arrangements and comprehensive benefits."
+        },
+        "innovation": {
+            "title": "Innovation and Excellence",
+            "description": "Contribute to cutting-edge research and be a part of groundbreaking medical solutions."
+        },
+        "openingsTitle": "Current Job Postings",
+        "openingsDescription": "We do not currently have any open positions. However, we are always interested in connecting with talented individuals who share our passion for innovation in the field of biotechnology.",
+        "openingsButton": "Send CV to info@biomiramed.com",
+        "applyTitle": "Apply Now",
+        "applyDescription": "Send your application and join our team of innovators.",
+        "formName": "Full Name",
+        "formEmail": "Email Address",
+        "formPhone": "Phone Number",
+        "formPosition": "Position",
+        "formCV": "Upload CV/Resume",
+        "formCoverLetter": "Cover Letter",
+        "formSelectFile": "Choose File",
+        "formNoFile": "No file chosen",
+        "formFileFormats": "Accepted formats: PDF, DOC, DOCX (Max 5MB)",
+        "formCoverLetterPlaceholder": "Tell us why you are interested in joining BiomiraMed and what qualities make you a great candidate for this role...",
+        "formSubmit": "Send Application",
+        "benefitsTitle": "Additional Rights and Advantages",
+        "benefitsDescription": "We invest in our people with comprehensive benefits and a supportive work environment.",
+        "benefit1": "Comprehensive health insurance and healthy lifestyle programs",
+        "benefit2": "Professional development and training opportunities",
+        "benefit3": "International collaboration and travel opportunities",
+        "benefit4": "Competitive salary and performance bonuses",
+        "benefit5": "Inclusive and diverse team culture",
+        "benefit6": "Flexible working hours and remote work options"
+    }
+}
