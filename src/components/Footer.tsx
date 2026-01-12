@@ -64,8 +64,7 @@ const Footer = () => {
               BiomiraMed
             </div>
             <p className="text-primary-100 mb-6 leading-relaxed">
-              Sağlık teknolojileri alanında 15 yılı aşkın
-              deneyimimizle, yenilikçi çözümler sunarak sağlık
+              Öncü pazarlama firmalarından biri olarak yenilikçi çözümler sunarak sağlık
               sektörüne değer katıyoruz.
             </p>
             <div className="space-y-3">
@@ -84,9 +83,9 @@ const Footer = () => {
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-accent-500 mr-3 flex-shrink-0 mt-0.5" />
                 <span className="text-primary-100">
-                  Teknokent Mahallesi
+                  Barbaros Mahallesi, Barbaros Caddesi
                   <br />
-                  Ankara, Türkiye
+                  Büyükemir Plaza No: 229
                 </span>
               </div>
             </div>

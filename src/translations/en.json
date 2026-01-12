@@ -9,16 +9,36 @@
     },
     "hero": {
         "badge": "Healthcare Technology Leader",
-        "title": "Advanced Technology",
-        "subtitle": "Reliable Solutions",
-        "description": "With over 15 years of experience, we provide the highest quality technological solutions to healthcare professionals."
+        "title": "Biomira Medical",
+        "subtitle": "Your Strategic Solution Partner in Medical Devices",
+        "description": "We provide the highest quality technological solutions to healthcare professionals."
     },
     "about": {
         "badge": "About Us",
-        "title": "Trusted Partner in",
-        "subtitle": "Healthcare Technologies",
-        "description1": "As BiomiraMed, we are one of the leading companies in the healthcare technology sector with over 15 years of experience. We continue to add value to the healthcare sector with our innovative solutions and quality service approach.",
-        "description2": "Our mission is to provide reliable, effective and user-friendly solutions to healthcare professionals using the latest technologies. By aiming for excellence in every project, we focus on improving patient care quality."
+        "title": "Pioneering Solutions in",
+        "subtitle": "Medical Marketing",
+        "description1": "As one of the pioneering marketing firms, we aim to provide innovative and sustainable solutions. Our company, aware of its unique sensitivities and legal requirements, offers end-to-end solutions in the field of medical marketing. With our service approach based on scientific accuracy, ethical approach and strategic perspective, we increase the visibility and effectiveness of pharmaceutical, medical device and healthcare brands in the market.",
+        "description2": "With our expert team, we aim to provide effective communication to the right target audiences by integrating digital and traditional marketing channels. We focus on producing solutions that strengthen the value of brands, build trust and support sustainable success.",
+        "valuesTitle": "Our Values",
+        "valuesDescription": "As BiomiraMed, our core values guide us in every step",
+        "values": {
+            "expertTeam": {
+                "title": "Expert Team",
+                "description": "With our expert and experienced team, we provide professional solutions in every project."
+            },
+            "trustQuality": {
+                "title": "Trust and Quality",
+                "description": "We are pioneers in the industry with our quality products and reliable service approach."
+            },
+            "addedValue": {
+                "title": "Added Value",
+                "description": "We develop solutions that continuously provide added value to our customers."
+            },
+            "continuousInnovation": {
+                "title": "Continuous Innovation",
+                "description": "We offer innovative solutions in the sector through continuous research and development."
+            }
+        }
     },
     "products": {
         "title": "Innovative Products",
@@ -48,9 +68,9 @@
             "feature3": "Bright and youthful appearance",
             "feature4": "Challenge fatigue and aging with PhilExir"
         },
-        "ctaTitle": "Looking for Custom Solutions?",
+        "ctaTitle": "Contact us to take your brand one step further",
         "ctaDescription": "Our expert team is ready to develop custom healthcare technology solutions for you. Contact us immediately and let's bring your projects to life.",
-        "ctaButton1": "Free Consultation",
+        "ctaButton1": "Contact Us",
         "ctaButton2": "Call Now",
         "detail": {
             "back": "Return to Homepage",
@@ -81,7 +101,7 @@
     },
     "whyChooseUs": {
         "title": "Why BiomiraMed?",
-        "description": "We continuously improve to be your trusted partner in healthcare technologies",
+        "description": "As one of the leading marketing firms, we continuously improve to be your trusted partner in healthcare technologies",
         "sustainable": {
             "title": "Sustainable Practices",
             "description": "Every process is designed on the basis of environmental responsibility."
@@ -96,7 +116,7 @@
         },
         "ctaTitle": "Let's find the right solution for your projects together",
         "ctaDescription": "Our expert team is ready to work with you to develop custom solutions for your needs",
-        "ctaButton1": "Free Consultation",
+        "ctaButton1": "Contact Us",
         "ctaButton2": "View Products"
     },
     "contact": {

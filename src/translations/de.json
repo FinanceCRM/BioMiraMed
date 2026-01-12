@@ -9,16 +9,36 @@
     },
     "hero": {
         "badge": "Führer in Gesundheitstechnologie",
-        "title": "Fortschrittliche Technologie",
-        "subtitle": "Zuverlässige Lösungen",
-        "description": "Mit über 15 Jahren Erfahrung bieten wir Gesundheitsfachkräften Lösungen von höchster Qualität."
+        "title": "Biomira Medical",
+        "subtitle": "Ihr strategischer Lösungspartner für Medizinprodukte",
+        "description": "Wir bieten Gesundheitsfachkräften Lösungen von höchster Qualität."
     },
     "about": {
         "badge": "Über uns",
-        "title": "Vertrauenspartner in",
-        "subtitle": "Gesundheitstechnologien",
-        "description1": "Als BiomiraMed sind wir eines der führenden Unternehmen im Gesundheitssektor mit über 15 Jahren Erfahrung.",
-        "description2": "Unsere Mission ist es, Gesundheitsfachkräften mit modernsten Technologien zuverlässige Lösungen anzubieten."
+        "title": "Wegweisende Lösungen im",
+        "subtitle": "Medizinischen Marketing",
+        "description1": "Als eines der führenden Marketingunternehmen streben wir danach, innovative und nachhaltige Lösungen anzubieten. Unser Unternehmen ist sich seiner besonderen Sensibilitäten und rechtlichen Anforderungen bewusst und bietet End-to-End-Lösungen im Bereich des medizinischen Marketings. Mit unserem Serviceansatz, der auf wissenschaftlicher Genauigkeit, ethischem Ansatz und strategischer Perspektive basiert, erhöhen wir die Sichtbarkeit und Wirksamkeit von Pharma-, Medizinprodukte- und Gesundheitsmarken auf dem Markt.",
+        "description2": "Mit unserem Expertenteam zielen wir darauf ab, durch die Integration digitaler und traditioneller Marketingkanäle eine effektive Kommunikation mit den richtigen Zielgruppen zu gewährleisten. Wir konzentrieren uns auf die Entwicklung von Lösungen, die den Wert von Marken stärken, Vertrauen aufbauen und nachhaltigen Erfolg unterstützen.",
+        "valuesTitle": "Unsere Werte",
+        "valuesDescription": "Als BiomiraMed leiten uns unsere Kernwerte bei jedem Schritt",
+        "values": {
+            "expertTeam": {
+                "title": "Expertenteam",
+                "description": "Mit unserem fachkundigen und erfahrenen Team bieten wir in jedem Projekt professionelle Lösungen."
+            },
+            "trustQuality": {
+                "title": "Vertrauen und Qualität",
+                "description": "Wir sind Pioniere in der Branche mit unseren Qualitätsprodukten und zuverlässigem Service."
+            },
+            "addedValue": {
+                "title": "Mehrwert",
+                "description": "Wir entwickeln Lösungen, die unseren Kunden kontinuierlich Mehrwert bieten."
+            },
+            "continuousInnovation": {
+                "title": "Kontinuierliche Innovation",
+                "description": "Wir bieten innovative Lösungen durch kontinuierliche Forschung und Entwicklung."
+            }
+        }
     },
     "products": {
         "title": "Innovative Produkte",
@@ -48,9 +68,9 @@
             "feature3": "Jugendliches Aussehen",
             "feature4": "Anti-Aging"
         },
-        "ctaTitle": "Suchen Sie maßgeschneiderte Lösungen?",
+        "ctaTitle": "Kontaktieren Sie uns, um Ihre Marke einen Schritt weiter zu bringen",
         "ctaDescription": "Unser Expertenteam ist bereit.",
-        "ctaButton1": "Kostenlose Beratung",
+        "ctaButton1": "Kontakt aufnehmen",
         "ctaButton2": "Jetzt anrufen",
         "detail": {
             "back": "Zur Startseite",
@@ -81,7 +101,7 @@
     },
     "whyChooseUs": {
         "title": "Warum BiomiraMed?",
-        "description": "Ihr vertrauenswürdiger Partner",
+        "description": "Als eines der führenden Marketingunternehmen verbessern wir uns kontinuierlich, um Ihr vertrauenswürdiger Partner zu sein",
         "sustainable": {
             "title": "Nachhaltige Praktiken",
             "description": "Umweltverantwortung."
@@ -96,7 +116,7 @@
         },
         "ctaTitle": "Lassen Sie uns die richtige Lösung finden",
         "ctaDescription": "Unser Team ist bereit",
-        "ctaButton1": "Kostenlose Beratung",
+        "ctaButton1": "Kontakt aufnehmen",
         "ctaButton2": "Produkte anzeigen"
     },
     "contact": {

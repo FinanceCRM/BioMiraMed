@@ -12,7 +12,6 @@ import {
   FileText,
   Upload,
   Send,
-  Globe,
 } from "lucide-react";
 
 export default function Career() {
@@ -66,15 +65,6 @@ export default function Career() {
       title: t("career.innovation.title"),
       description: t("career.innovation.description"),
     },
-  ];
-
-  const benefits = [
-    { icon: Heart, title: t("career.benefit1") },
-    { icon: TrendingUp, title: t("career.benefit2") },
-    { icon: Globe, title: t("career.benefit3") },
-    { icon: Award, title: t("career.benefit4") },
-    { icon: Users, title: t("career.benefit5") },
-    { icon: Briefcase, title: t("career.benefit6") },
   ];
 
   return (
@@ -287,37 +277,6 @@ export default function Career() {
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-primary-50">
-        <div className="container-max">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary-600 mb-6">
-              {t("career.benefitsTitle")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t("career.benefitsDescription")}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 flex items-start space-x-4"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon className="h-6 w-6 text-primary-600" />
-                  </div>
-                  <p className="text-gray-700 font-medium leading-relaxed">
-                    {benefit.title}
-                  </p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

@@ -35,23 +35,20 @@ const Contact = () => {
     },
     {
       icon: Mail,
-      title: "E-posta",
-      details: ["info@biomiramed.com", "destek@biomiramed.com"],
+      title: t("contact.email"),
+      details: ["info@biomiramed.com"],
       color: "text-accent-500",
     },
     {
       icon: MapPin,
-      title: "Adres",
-      details: ["Teknokent Mahallesi", "Ankara, Türkiye"],
+      title: t("contact.address"),
+      details: ["Barbaros Mahallesi, Barbaros Caddesi", "Büyükemir Plaza No: 229"],
       color: "text-primary-500",
     },
     {
       icon: Clock,
-      title: "Çalışma Saatleri",
-      details: [
-        "Pazartesi - Cuma: 08:00 - 18:00",
-        "Cumartesi: 09:00 - 15:00",
-      ],
+      title: t("contact.workingHours"),
+      details: ["Haftaiçi: 09:00 - 17:00"],
       color: "text-accent-500",
     },
   ];

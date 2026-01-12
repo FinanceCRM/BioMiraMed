@@ -15,7 +15,6 @@ const About = () => {
   const achievements = [
     { icon: CheckCircle, text: "ISO 13485 Kalite Yönetim Sistemi" },
     { icon: Award, text: "CE Belgeli Ürün Portföyü" },
-    { icon: Globe, text: "15+ Yıllık Sektör Deneyimi" },
     { icon: Shield, text: "Uluslararası Kalite Standartları" },
   ];
 
@@ -38,38 +37,28 @@ const About = () => {
       label: "Ülke",
       color: "text-purple-500",
     },
-    {
-      icon: Heart,
-      number: "15+",
-      label: "Yıl Deneyim",
-      color: "text-red-500",
-    },
   ];
 
   const values = [
     {
-      icon: Heart,
-      title: "İnsan Odaklı",
-      description:
-        "Her zaman insan sağlığını önceleyerek, hasta odaklı çözümler geliştiriyoruz.",
-    },
-    {
-      icon: Lightbulb,
-      title: "İnovasyon",
-      description:
-        "Sürekli araştırma ve geliştirme ile sektörde yenilikçi çözümler sunuyoruz.",
+      icon: Users,
+      title: t("about.values.expertTeam.title"),
+      description: t("about.values.expertTeam.description"),
     },
     {
       icon: Shield,
-      title: "Güvenilirlik",
-      description:
-        "Kaliteli ürünler ve güvenilir hizmet anlayışımızla sektörde öncüyüz.",
+      title: t("about.values.trustQuality.title"),
+      description: t("about.values.trustQuality.description"),
     },
     {
       icon: Target,
-      title: "Mükemmellik",
-      description:
-        "Her projede mükemmelliği hedefleyerek, en yüksek standartları sağlıyoruz.",
+      title: t("about.values.addedValue.title"),
+      description: t("about.values.addedValue.description"),
+    },
+    {
+      icon: Lightbulb,
+      title: t("about.values.continuousInnovation.title"),
+      description: t("about.values.continuousInnovation.description"),
     },
   ];
 
@@ -96,16 +85,6 @@ const About = () => {
               </div>
               <div className="absolute top-1/2 right-8 w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg animate-bounce">
                 <Target className="h-6 w-6 text-white" />
-              </div>
-            </div>
-            <div className="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-500 mb-1">
-                  15+
-                </div>
-                <div className="text-sm text-gray-600">
-                  Yıl Deneyim
-                </div>
               </div>
             </div>
           </div>
@@ -178,11 +157,10 @@ const About = () => {
         <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-              Değerlerimiz
+              {t("about.valuesTitle")}
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              BiomiraMed olarak, her adımımızda rehber olan temel
-              değerlerimiz
+              {t("about.valuesDescription")}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

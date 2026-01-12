@@ -9,16 +9,36 @@
     },
     "hero": {
         "badge": "Sağlık Teknolojileri Lideri",
-        "title": "Gelişmiş Teknoloji",
-        "subtitle": "Güvenilir Çözümler",
-        "description": "15 yılı aşkın deneyimimizle, sağlık profesyonellerine en kaliteli teknolojik çözümleri sunuyoruz."
+        "title": "Biomira Medikal",
+        "subtitle": "Tıbbi Cihazda Stratejik Çözüm Ortağınız",
+        "description": "Sağlık profesyonellerine en kaliteli teknolojik çözümleri sunuyoruz."
     },
     "about": {
         "badge": "Hakkımızda",
-        "title": "Sağlık Teknolojilerinde",
-        "subtitle": "Güvenilir Partner",
-        "description1": "BiomiraMed olarak, sağlık teknolojileri alanında 15 yılı aşkın deneyimimizle sektörün öncü firmalarından biriyiz. Yenilikçi çözümlerimiz ve kaliteli hizmet anlayışımızla sağlık sektörüne değer katmaya devam ediyoruz.",
-        "description2": "Misyonumuz, en son teknolojileri kullanarak sağlık profesyonellerine güvenilir, etkili ve kullanıcı dostu çözümler sunmaktır. Her projede mükemmelliği hedefleyerek, hasta bakım kalitesini artırmaya odaklanıyoruz."
+        "title": "Medikal Pazarlamada",
+        "subtitle": "Öncü Çözümler",
+        "description1": "Öncü pazarlama firmalarından biri olarak yenilikçi ve sürdürülebilir çözümler sunmayı hedeflemekteyiz. Kendine özgü hassasiyetlerinin ve yasal gerekliliklerinin bilincinde olan firmamız, medikal pazarlama alanında uçtan uca çözümler sunmaktadır. Bilimsel doğruluk, etik yaklaşım ve stratejik bakış açısını temel alan hizmet anlayışımızla; ilaç, medikal cihaz ve sağlık hizmetleri markalarının pazardaki görünürlüğünü ve etkinliğini artırıyoruz.",
+        "description2": "Alanında uzman ekibimizle, dijital ve geleneksel pazarlama kanallarını entegre ederek doğru hedef kitlelere etkili iletişim sağlamayı amaçlıyoruz. Markaların değerini güçlendiren, güven inşa eden ve sürdürülebilir başarıyı destekleyen çözümler üretmeye odaklanıyoruz.",
+        "valuesTitle": "Değerlerimiz",
+        "valuesDescription": "BiomiraMed olarak, her adımımızda rehber olan temel değerlerimiz",
+        "values": {
+            "expertTeam": {
+                "title": "Uzman Kadro",
+                "description": "Alanında uzman ve deneyimli ekibimizle, her projede profesyonel çözümler sunuyoruz."
+            },
+            "trustQuality": {
+                "title": "Güven ve Kalite",
+                "description": "Kaliteli ürünler ve güvenilir hizmet anlayışımızla sektörde öncüyüz."
+            },
+            "addedValue": {
+                "title": "Katma Değer",
+                "description": "Müşterilerimize sürekli katma değer sağlayan çözümler geliştiriyoruz."
+            },
+            "continuousInnovation": {
+                "title": "Sürekli İnovasyon",
+                "description": "Sürekli araştırma ve geliştirme ile sektörde yenilikçi çözümler sunuyoruz."
+            }
+        }
     },
     "products": {
         "title": "Innovative Products",
@@ -48,9 +68,9 @@
             "feature3": "Bright and youthful appearance",
             "feature4": "Challenge fatigue and aging with PhilExir"
         },
-        "ctaTitle": "İhtiyacınıza Özel Çözüm Arıyorsunuz?",
+        "ctaTitle": "Markanızı bir adım öne taşımak için bizimle iletişime geçin",
         "ctaDescription": "Uzman ekibimiz, size özel sağlık teknolojisi çözümleri geliştirmek için hazır. Hemen iletişime geçin ve projelerinizi hayata geçirelim.",
-        "ctaButton1": "Ücretsiz Danışmanlık",
+        "ctaButton1": "İletişime Geç",
         "ctaButton2": "Hemen Ara",
         "detail": {
             "back": "Ana Sayfaya Dön",
@@ -81,7 +101,7 @@
     },
     "whyChooseUs": {
         "title": "Neden BiomiraMed?",
-        "description": "Sağlık teknolojileri alanında güvenilir partneriniz olmak için sürekli gelişim gösteriyoruz",
+        "description": "Öncü pazarlama firmalarından biri olarak sağlık teknolojileri alanında güvenilir partneriniz olmak için sürekli gelişim gösteriyoruz",
         "sustainable": {
             "title": "Sürdürülebilir Uygulamalar",
             "description": "Her süreç, çevresel sorumluluk temelinde tasarlanmıştır."
@@ -96,7 +116,7 @@
         },
         "ctaTitle": "Projeleriniz için doğru çözümü birlikte bulalım",
         "ctaDescription": "Uzman ekibimiz, ihtiyaçlarınıza özel çözümler geliştirmek için sizinle çalışmaya hazır",
-        "ctaButton1": "Ücretsiz Danışmanlık",
+        "ctaButton1": "İletişime Geç",
         "ctaButton2": "Ürünleri İncele"
     },
     "contact": {
