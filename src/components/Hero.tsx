@@ -37,10 +37,6 @@ const Hero = () => {
                 {t("hero.subtitle")}
               </span>
             </h1>
-
-            <p className="text-2xl md:text-3xl mb-12 text-gray-100 max-w-4xl leading-relaxed font-light">
-              {t("hero.description")}
-            </p>
           </div>
         </div>
       </div>
