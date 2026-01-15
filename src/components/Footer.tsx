@@ -17,15 +17,7 @@ const Footer = () => {
   const footerLinks = {
     company: [
       { name: "Hakkımızda", href: "#about" },
-      { name: "Hizmetlerimiz", href: "#services" },
-      { name: "Referanslar", href: "#testimonials" },
       { name: "Kariyer", href: "#" },
-    ],
-    services: [
-      { name: "Kardiyovasküler Çözümler", href: "#" },
-      { name: "Laboratuvar Teknolojileri", href: "#" },
-      { name: "Tanı Ekipmanları", href: "#" },
-      { name: "Teknik Destek", href: "#" },
     ],
     resources: [
       { name: "Blog", href: "#blog" },
@@ -96,23 +88,6 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-primary-100 hover:text-accent-500 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">
-              Hizmetler
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}

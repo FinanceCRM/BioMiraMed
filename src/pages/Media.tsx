@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Package,
-  Calendar,
-  Image as ImageIcon,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -66,33 +64,6 @@ export default function Media() {
           title: "VSP Catalog Box",
           subtitle: "VSP catalog packaging",
           image: "/assets/vsp katalog kutu.JPG",
-        },
-      ],
-    },
-    {
-      id: "events",
-      title: t("media.events"),
-      icon: Calendar,
-      count: 1,
-      items: [
-        {
-          title: "Industry Conference 2024",
-          subtitle:
-            "Our participation in major biotechnology conferences",
-          image: "/assets/slide.jpeg",
-        },
-      ],
-    },
-    {
-      id: "gallery",
-      title: t("media.gallery"),
-      icon: ImageIcon,
-      count: 1,
-      items: [
-        {
-          title: "Product Showcase",
-          subtitle: "Our innovative biotechnology solutions",
-          image: "/assets/trio.jpeg",
         },
       ],
     },

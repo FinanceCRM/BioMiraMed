@@ -18,27 +18,6 @@ const About = () => {
     { icon: Shield, text: "Uluslararası Kalite Standartları" },
   ];
 
-  const stats = [
-    {
-      icon: Users,
-      number: "500+",
-      label: "Mutlu Müşteri",
-      color: "text-blue-500",
-    },
-    {
-      icon: Award,
-      number: "50+",
-      label: "Ödül & Sertifika",
-      color: "text-green-500",
-    },
-    {
-      icon: Globe,
-      number: "25+",
-      label: "Ülke",
-      color: "text-purple-500",
-    },
-  ];
-
   const values = [
     {
       icon: Users,
@@ -136,22 +115,6 @@ const About = () => {
               </a>
             </div>
           </div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="flex items-center justify-center w-16 h-16 bg-gray-100 rounded-2xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <stat.icon className={`h-8 w-8 ${stat.color}`} />
-              </div>
-              <div className="text-4xl font-bold text-gray-900 mb-2">
-                {stat.number}
-              </div>
-              <div className="text-gray-600 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
 
         <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12">

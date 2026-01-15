@@ -102,29 +102,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-
-        <div className="text-center bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-12 text-white">
-          <h3 className="text-3xl font-heading font-bold mb-4">
-            {t("products.ctaTitle")}
-          </h3>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            {t("products.ctaDescription")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contact"
-              className="bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              {t("products.ctaButton1")}
-            </a>
-            <a
-              href="tel:02164724194"
-              className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold transition-all duration-300"
-            >
-              {t("products.ctaButton2")}
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
